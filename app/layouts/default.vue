@@ -1,8 +1,11 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const mobileNavOpen = ref(false);
+</script>
 <template>
   <div id="layout">
-    <TheHeader />
+    <TheHeader v-model="mobileNavOpen"/>
     <main class="px-side pt-header relative">
+      <MobileNav :visible="mobileNavOpen" @close="mobileNavOpen = false"/>
       <ConstellationBackground />
       <slot />
     </main>

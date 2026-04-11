@@ -2,6 +2,9 @@
 import { useSmoothScroll } from "~/composable/useSmoothScroll";
 
 const { scrollTo } = useSmoothScroll();
+const isDesktop = useMediaQuery("(min-width: 768px)");
+
+const mobileNavOpen = defineModel<boolean>({required: true});
 </script>
 
 <template>
@@ -12,6 +15,7 @@ const { scrollTo } = useSmoothScroll();
       <div class="badge" />
       <span class="font-bold text-sm tracking-widest">Simon B.</span>
     </div>
+    <template v-if="isDesktop">
     <nav class="flex text-text-muted items-center gap-8 animate-fadeDown">
       <button @click="scrollTo('#project-section')">Work</button>
       <button @click="scrollTo('#about-section')">About</button>
@@ -22,6 +26,10 @@ const { scrollTo } = useSmoothScroll();
       class="button-primary animate-fadeDown"
     >
       Get in touch ↗
+    </button>
+    </template>
+    <button v-else @click="mobileNavOpen = true" class="hamburger flex flex-col gap-1 p-1 pt-1.5">
+        <span/><span/><span/>
     </button>
   </header>
 </template>
@@ -36,5 +44,13 @@ const { scrollTo } = useSmoothScroll();
 nav a,
 nav button {
   @apply hover:text-text duration-200;
+}
+
+.hamburger span {
+  display: block;
+  width: 20px;
+  height: 1px;
+  background: var(--color-text-muted);
+  border-radius: 99px;
 }
 </style>

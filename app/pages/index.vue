@@ -13,7 +13,6 @@ const projects: Project[] = [
     title: "METAR Explorer",
     description:
       "Real-time aviation weather decoded. Search any ICAO station, visialize wind, clouds and flight categories - parsed form raw METAR strings.",
-    link: "http://localhost:6767",
     tech: ["Nuxt 4", "TypeScript", "Tailwind CSS"],
     alive: true,
     icon: "✈",
@@ -21,18 +20,29 @@ const projects: Project[] = [
   {
     title: "METAR Explorer",
     description:
-      "Real-time aviation weather decoded. Search any ICAO station, visialize wind, clouds and flight categories - parsed form raw METAR strings.",
-    link: "http://localhost:6767",
+        "Real-time aviation weather decoded. Search any ICAO station, visialize wind, clouds and flight categories - parsed form raw METAR strings.",
     tech: ["Nuxt 4", "TypeScript", "Tailwind CSS"],
-    alive: false,
-    construction: true,
+    alive: true,
+    icon: "✈",
+  },
+  {
+    title: "METAR Explorer",
+    description:
+        "Real-time aviation weather decoded. Search any ICAO station, visialize wind, clouds and flight categories - parsed form raw METAR strings.",
+    tech: ["Nuxt 4", "TypeScript", "Tailwind CSS"],
+    alive: true,
+    icon: "✈",
   },
 ];
+
+const projectColumns = computed(() => {
+  return projects.length
+})
 
 const { scrollTo } = useSmoothScroll();
 </script>
 <template>
-  <div class="pt-24 pb-20 flex flex-col gap-40">
+  <div class="md:pt-24 pt-12 pb-10 md:pb-20 flex flex-col gap-10 lg:gap-40 md:gap-20">
     <div class="flex flex-col gap-7">
       <div class="hero-tag">Frontend Developer &amp; Student Pilot</div>
       <h1 class="hero">
@@ -41,7 +51,7 @@ const { scrollTo } = useSmoothScroll();
             >{{ word }}&nbsp;&nbsp;</span
           >
         </span>
-        <br />
+        <br class="hidden xl:block"/>
         <span v-for="(word, i) in lowerWords" :key="word" class="word-wrap">
           <span
             class="word text-primary"
@@ -88,8 +98,8 @@ const { scrollTo } = useSmoothScroll();
       </div>
     </div>
 
-    <MainSection id="project-section" class="pt-16" title="selected work" sub-title="Projects">
-      <div class="grid gap-4 grid-cols-[repeat(auto-fit,minmax(500px,1fr))]">
+    <MainSection id="project-section" class="lg:pt-16" title="selected work" sub-title="Projects">
+      <div class="projects-grid">
         <ProjectCard
           v-for="(project, index) in projects"
           :key="project.title"
@@ -154,15 +164,34 @@ const { scrollTo } = useSmoothScroll();
 }
 
 .about-section {
-  @apply flex py-20 z-10 gap-16 items-center animate-fadeUp;
+  @apply flex py-20 z-10 gap-16 items-center animate-fadeUp flex-col lg:flex-row;
 
   &::before {
     @apply border-t border-b border-border bg-background -left-side -right-side;
     content: "";
     display: block;
     position: absolute;
+    top: 0;
     height: 100%;
     z-index: -1;
+  }
+}
+
+.projects-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(v-bind('projectColumns'), minmax(0, 460px));
+}
+
+@media (max-width: 640px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, minmax(0, 460px));
   }
 }
 </style>

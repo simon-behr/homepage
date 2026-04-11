@@ -2,7 +2,7 @@
 export type Project = {
   title: string;
   description: string;
-  link: string;
+  link?: string;
   tech: string[];
   icon?: string;
   alive?: boolean;
@@ -26,7 +26,7 @@ useIntersectionObserver(
 <template>
   <a
     ref="card"
-    :href="project.link"
+    :href="project.link || ''"
     class="p-7 card-fade justify-end flex flex-col gap-5 relative transition-all bg-[#1c1d25] border border-border hover:border-primary rounded-2xl"
     :class="{ 'pointer-events-none': project.construction, 'is-visible': visible }"
     target="_blank"
@@ -41,7 +41,7 @@ useIntersectionObserver(
       <span class="text-xl font-bold">{{ project.title }}</span>
       <p class="text-sm text-text-muted">{{ project.description }}</p>
     </div>
-    <div class="flex gap-2 text-xs text-text-muted font-syne-mono">
+    <div class="flex gap-x-2 gap-y-2.5 flex-wrap text-xs text-text-muted font-syne-mono">
       <div v-if="project.alive" class="badge green flex gap-1 items-center">
         <div class="w-1.5 h-1.5 bg-green-500 rounded-full mr-1" />
         live
@@ -105,7 +105,7 @@ a:not(.construction):hover {
 }
 
 .badge {
-  @apply rounded-full border px-2 py-1 border-border bg-[#181921];
+  @apply rounded-full border px-2 py-1 border-border bg-[#181921] whitespace-nowrap;
 
   &.green {
     @apply border-green-500 text-green-500;
