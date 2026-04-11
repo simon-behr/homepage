@@ -16,7 +16,10 @@
     "npm-check-updates:install": "npx taze major -w --maturity-period 2 && npm install"
   },
   "dependencies": {
+    "@fontsource/syne": "^5.2.7",
+    "@fontsource/syne-mono": "^5.2.7",
     "@tailwindcss/vite": "^4.2.2",
+    "@vueuse/nuxt": "^14.2.1",
     "nuxt": "^4.4.2",
     "tailwindcss": "^4.2.2",
     "vue": "^3.5.32",
