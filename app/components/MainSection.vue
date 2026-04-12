@@ -8,7 +8,7 @@ defineProps<{ title: string; subTitle?: string; construction?: boolean }>();
       <h2 class="text-primary text-xs font-syne-mono">// {{ title }}</h2>
       <span v-if="subTitle" class="text-3xl font-bold"> {{ subTitle }} </span>
     </div>
-    <WipOverlay v-if="construction" />
+    <ConstructionOverlay v-if="construction" />
     <slot v-else />
   </div>
 </template>

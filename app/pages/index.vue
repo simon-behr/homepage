@@ -12,7 +12,7 @@ const projects: Project[] = [
   {
     title: "METAR Explorer",
     description:
-      "Real-time aviation weather decoded. Search any ICAO station, visialize wind, clouds and flight categories - parsed form raw METAR strings.",
+      "Real-time aviation weather decoded. Search any ICAO station, visualize wind, clouds and flight categories - parsed form raw METAR strings.",
     tech: ["Nuxt 4", "TypeScript", "Tailwind CSS"],
     icon: "✈",
     construction: true,

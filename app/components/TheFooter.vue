@@ -9,6 +9,7 @@
       <a href="https://github.com/simon-behr" target="_blank">GitHub</a>
       <a href="https://www.linkedin.com/in/simon-behr-831b942a1/" target="_blank">LinkedIn</a>
       <a href="mailto:behrsimon08@gmail.com">Email</a>
+      <NuxtLink to="/impressum">Impressum</NuxtLink>
     </div>
   </footer>
 </template>

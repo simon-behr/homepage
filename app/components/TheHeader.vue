@@ -14,7 +14,7 @@ const mobileNavOpen = defineModel<boolean>({ required: true });
   >
     <div class="flex items-center gap-2">
       <div class="badge" />
-      <span class="font-bold text-sm tracking-widest">Simon B.</span>
+      <NuxtLink to="/" class="font-bold text-sm tracking-widest">Simon B.</NuxtLink>
     </div>
     <nav v-if="isDesktop" class="flex text-text-muted items-center gap-8 animate-fadeDown">
       <button @click="scrollTo('#project-section')">Work</button>

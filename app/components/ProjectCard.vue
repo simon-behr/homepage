@@ -55,7 +55,7 @@ useIntersectionObserver(
     </div>
 
     <div v-if="project.construction" class="wip-overlay">
-      <WipOverlay />
+      <ConstructionOverlay />
     </div>
   </a>
 </template>
