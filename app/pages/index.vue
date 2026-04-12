@@ -2,6 +2,14 @@
 import type { Project } from "~/components/ProjectCard.vue";
 import { useSmoothScroll } from "~/composable/useSmoothScroll";
 
+useSeoMeta({
+  title: 'Simon B. — Frontend Developer & Student Pilot',
+  description: 'Vue 3, Nuxt 4, TypeScript — building clean interfaces with a pilot\'s eye for precision.',
+  ogTitle: 'Simon B. — Frontend Developer & Student Pilot',
+  ogDescription: 'Vue 3, Nuxt 4, TypeScript — building clean interfaces with a pilot\'s eye for precision.',
+  ogImage: '/og-image.png',
+})
+
 const upperWords = ["Building", "interfaces", "that"];
 const lowerWords = ["feel", "like", "flying."];
 
