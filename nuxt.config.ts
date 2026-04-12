@@ -12,6 +12,18 @@ export default defineNuxtConfig({
   app: {
     head: {
       title: "Homepage",
+      script: [
+        {
+          innerHTML: `
+            (function() {
+              const stored = localStorage.getItem('vueuse-color-scheme');
+              const mode = stored || 'dark';
+              document.documentElement.classList.add(mode === 'light' ? 'light' : 'dark');
+            })();
+          `,
+          type: "text/javascript",
+        },
+      ],
       meta: [
         { charset: "utf8" },
         { name: "viewport", content: "width=device-width, initial-scale=1" },

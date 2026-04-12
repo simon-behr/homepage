@@ -1,24 +1,29 @@
 <script setup lang="ts">
-import {useSmoothScroll} from '~/composable/useSmoothScroll'
+import { useSmoothScroll } from "~/composable/useSmoothScroll";
 
-defineProps<{ visible: boolean }>()
-const emit = defineEmits(['close'])
+defineProps<{ visible: boolean }>();
+const emit = defineEmits(["close"]);
 
-const {scrollTo} = useSmoothScroll()
+const { scrollTo } = useSmoothScroll();
 
 const handleClick = (sectionId: string) => {
-  emit('close')
-  scrollTo(sectionId)
-}
+  emit("close");
+  scrollTo(sectionId);
+};
 </script>
 
 <template>
   <Transition name="nav">
     <div
-        v-if="visible"
-        class="mobile-nav fixed inset-0 z-50 flex flex-col items-center justify-center gap-16"
+      v-if="visible"
+      class="mobile-nav fixed inset-0 z-50 flex flex-col items-center justify-center gap-16"
     >
-      <button @click="emit('close')" class="absolute top-6 p-1 pt-1.5 text-text! text-xl! right-side">✕</button>
+      <button
+        @click="emit('close')"
+        class="absolute top-6 p-1 pt-1.5 text-text! text-xl! right-side"
+      >
+        ✕
+      </button>
       <nav class="flex flex-col items-center gap-8">
         <button @click="handleClick('#project-section')">Work</button>
         <button @click="handleClick('#about-section')">About</button>
@@ -35,8 +40,9 @@ const handleClick = (sectionId: string) => {
   -webkit-backdrop-filter: blur(10px);
 }
 
-button, a {
-  font-family: 'Syne', sans-serif;
+button,
+a {
+  font-family: "Syne", sans-serif;
   font-size: 32px;
   font-weight: 700;
   color: rgba(255, 255, 255, 0.2);
@@ -47,7 +53,8 @@ button, a {
   transition: color 0.2s;
 }
 
-button:hover, a:hover {
+button:hover,
+a:hover {
   color: var(--color-text);
 }
 

@@ -27,13 +27,13 @@ useIntersectionObserver(
   <a
     ref="card"
     :href="project.link || ''"
-    class="p-7 card-fade justify-end flex flex-col gap-5 relative transition-all bg-[#1c1d25] border border-border hover:border-primary rounded-2xl"
+    class="p-7 min-w-80 card-fade justify-end flex flex-col gap-5 relative transition-all bg-background-secondary border border-border hover:border-primary rounded-2xl"
     :class="{ 'pointer-events-none': project.construction, 'is-visible': visible }"
     target="_blank"
   >
     <div
       v-if="project.icon"
-      class="flex items-center bg-[#181921] justify-center w-10 h-10 rounded-xl border border-border"
+      class="flex items-center bg-background-tertiary justify-center w-10 h-10 rounded-xl border border-border"
     >
       {{ project.icon }}
     </div>
@@ -105,7 +105,7 @@ a:not(.construction):hover {
 }
 
 .badge {
-  @apply rounded-full border px-2 py-1 border-border bg-[#181921] whitespace-nowrap;
+  @apply rounded-full border px-2 py-1 border-border bg-background-tertiary whitespace-nowrap;
 
   &.green {
     @apply border-green-500 text-green-500;

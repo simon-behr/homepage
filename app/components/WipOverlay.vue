@@ -22,6 +22,7 @@
   font-size: 26px;
   opacity: 0.6;
   animation: spin 6s linear infinite;
+  color: #ffffff;
 }
 
 .wip-title {
@@ -33,7 +34,7 @@
 
 .wip-sub {
   font-size: 12px;
-  color: var(--color-text-muted);
+  color: #ffffff;
   letter-spacing: 0.04em;
 }
 

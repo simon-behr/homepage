@@ -1,3 +1,5 @@
+import { useColorMode } from "@vueuse/core";
+
 interface Node {
   x: number;
   y: number;
@@ -7,6 +9,8 @@ interface Node {
 }
 
 export function useConstellation(canvas: Ref<HTMLCanvasElement | null>) {
+  const colorMode = useColorMode();
+
   let raf: number;
   let nodes: Node[] = [];
   let W = 0,
@@ -15,6 +19,16 @@ export function useConstellation(canvas: Ref<HTMLCanvasElement | null>) {
     mouseY = 0;
   let targetMX = 0,
     targetMY = 0;
+
+  function getColors() {
+    const isDark = colorMode.value === "dark";
+    return {
+      node: isDark ? "rgba(168,255,120,0.55)" : "rgba(26,86,219,0.55)",
+      edge: isDark
+        ? (a: number) => `rgba(168,255,120,${a})`
+        : (a: number) => `rgba(26,86,219,${a * 2.5})`,
+    };
+  }
 
   function initNodes() {
     nodes = Array.from({ length: 160 }, () => ({
@@ -36,6 +50,7 @@ export function useConstellation(canvas: Ref<HTMLCanvasElement | null>) {
   function draw() {
     if (!canvas.value) return;
     const ctx = canvas.value.getContext("2d")!;
+    const colors = getColors();
     ctx.clearRect(0, 0, W, H);
 
     mouseX += (targetMX - mouseX) * 0.04;
@@ -58,7 +73,7 @@ export function useConstellation(canvas: Ref<HTMLCanvasElement | null>) {
         const dy = node1.y - node2.y;
         const d = Math.sqrt(dx * dx + dy * dy);
         if (d < 130) {
-          ctx.strokeStyle = `rgba(168,255,120,${(1 - d / 130) * 0.2})`;
+          ctx.strokeStyle = colors.edge((1 - d / 130) * 0.2);
           ctx.lineWidth = 0.5;
           ctx.beginPath();
           ctx.moveTo(node1.x, node1.y);
@@ -71,7 +86,7 @@ export function useConstellation(canvas: Ref<HTMLCanvasElement | null>) {
       const mdy = node1.y - mouseY;
       const md = Math.sqrt(mdx * mdx + mdy * mdy);
       if (md < 160) {
-        ctx.strokeStyle = `rgba(168,255,120,${(1 - md / 160) * 0.55})`;
+        ctx.strokeStyle = colors.edge((1 - md / 160) * 0.55);
         ctx.lineWidth = 0.7;
         ctx.beginPath();
         ctx.moveTo(node1.x, node1.y);
@@ -83,7 +98,7 @@ export function useConstellation(canvas: Ref<HTMLCanvasElement | null>) {
     nodes.forEach((n) => {
       ctx.beginPath();
       ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
-      ctx.fillStyle = "rgba(168,255,120,0.55)";
+      ctx.fillStyle = colors.node;
       ctx.fill();
     });
 

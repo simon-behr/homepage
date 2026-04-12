@@ -3,9 +3,9 @@ const mobileNavOpen = ref(false);
 </script>
 <template>
   <div id="layout">
-    <TheHeader v-model="mobileNavOpen"/>
+    <TheHeader v-model="mobileNavOpen" />
     <main class="px-side pt-header relative">
-      <MobileNav :visible="mobileNavOpen" @close="mobileNavOpen = false"/>
+      <MobileNav :visible="mobileNavOpen" @close="mobileNavOpen = false" />
       <ConstellationBackground />
       <slot />
     </main>

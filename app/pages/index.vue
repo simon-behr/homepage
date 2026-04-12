@@ -14,30 +14,10 @@ const projects: Project[] = [
     description:
       "Real-time aviation weather decoded. Search any ICAO station, visialize wind, clouds and flight categories - parsed form raw METAR strings.",
     tech: ["Nuxt 4", "TypeScript", "Tailwind CSS"],
-    alive: true,
     icon: "✈",
-  },
-  {
-    title: "METAR Explorer",
-    description:
-        "Real-time aviation weather decoded. Search any ICAO station, visialize wind, clouds and flight categories - parsed form raw METAR strings.",
-    tech: ["Nuxt 4", "TypeScript", "Tailwind CSS"],
-    alive: true,
-    icon: "✈",
-  },
-  {
-    title: "METAR Explorer",
-    description:
-        "Real-time aviation weather decoded. Search any ICAO station, visialize wind, clouds and flight categories - parsed form raw METAR strings.",
-    tech: ["Nuxt 4", "TypeScript", "Tailwind CSS"],
-    alive: true,
-    icon: "✈",
+    construction: true,
   },
 ];
-
-const projectColumns = computed(() => {
-  return projects.length
-})
 
 const { scrollTo } = useSmoothScroll();
 </script>
@@ -51,7 +31,7 @@ const { scrollTo } = useSmoothScroll();
             >{{ word }}&nbsp;&nbsp;</span
           >
         </span>
-        <br class="hidden xl:block"/>
+        <br class="hidden xl:block" />
         <span v-for="(word, i) in lowerWords" :key="word" class="word-wrap">
           <span
             class="word text-primary"
@@ -99,7 +79,7 @@ const { scrollTo } = useSmoothScroll();
     </div>
 
     <MainSection id="project-section" class="lg:pt-16" title="selected work" sub-title="Projects">
-      <div class="projects-grid">
+      <div class="flex gap-4 flex-wrap">
         <ProjectCard
           v-for="(project, index) in projects"
           :key="project.title"
@@ -174,24 +154,6 @@ const { scrollTo } = useSmoothScroll();
     top: 0;
     height: 100%;
     z-index: -1;
-  }
-}
-
-.projects-grid {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(v-bind('projectColumns'), minmax(0, 460px));
-}
-
-@media (max-width: 640px) {
-  .projects-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (min-width: 641px) and (max-width: 1024px) {
-  .projects-grid {
-    grid-template-columns: repeat(2, minmax(0, 460px));
   }
 }
 </style>
