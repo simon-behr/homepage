@@ -32,7 +32,7 @@ const projects: Project[] = [
 const { scrollTo } = useSmoothScroll();
 </script>
 <template>
-  <div class="md:pt-24 pt-12 pb-10 md:pb-20 flex flex-col gap-10 lg:gap-40 md:gap-20">
+  <div class="md:pt-24 pt-8 pb-10 md:pb-20 flex flex-col gap-10 lg:gap-40 md:gap-20">
     <div class="flex flex-col gap-7">
       <div class="hero-tag">Frontend Developer &amp; Student Pilot</div>
       <h1 class="hero">
@@ -154,7 +154,7 @@ const { scrollTo } = useSmoothScroll();
 }
 
 .about-section {
-  @apply flex py-20 z-10 gap-16 items-center animate-fadeUp flex-col lg:flex-row;
+  @apply flex md:py-20 py-12 z-10 gap-16 items-center animate-fadeUp flex-col lg:flex-row;
 
   &::before {
     @apply border-t border-b border-border bg-background -left-side -right-side;
