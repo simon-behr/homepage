@@ -10,7 +10,7 @@ const data = [
   },
   {
     label: 'Tooling & DevOps',
-    items: ['Git', 'Docker', 'Vercel', 'Vitest', 'Playwright'],
+    items: ['Git', 'Docker', 'Netlify', 'Vitest', 'Playwright'],
   },
 ]
 

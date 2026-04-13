@@ -14,7 +14,7 @@ Live at [simonbehr.dev](https://simonbehr.dev)
 - **Animations** — VueUse Motion, custom CSS keyframes
 - **Background** — Canvas-based constellation with mouse parallax
 - **Color Mode** — Dark / Light via `@nuxtjs/color-mode`
-- **Deployment** — Vercel with CI via GitHub Actions
+- **Deployment** — Netlify
 
 ---
 
