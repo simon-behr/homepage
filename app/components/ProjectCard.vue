@@ -111,8 +111,8 @@ a:not(.construction):hover {
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
   background: color-mix(in srgb, var(--color-background) 55%, transparent);
   display: flex;
   align-items: center;
