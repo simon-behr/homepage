@@ -1,12 +1,12 @@
-@import "tailwindcss";
-@import "@fontsource/syne/400.css";
-@import "@fontsource/syne/700.css";
-@import "@fontsource/syne-mono/400.css";
+@import 'tailwindcss';
+@import '@fontsource/syne/400.css';
+@import '@fontsource/syne/700.css';
+@import '@fontsource/syne-mono/400.css';
 
 /*https://tailwindcss.com/docs/upgrade-guide#buttons-use-the-default-cursor*/
 @layer base {
   button:not(:disabled),
-  [role="button"]:not(:disabled) {
+  [role='button']:not(:disabled) {
     cursor: pointer;
   }
 }
@@ -21,13 +21,15 @@
   --color-background-tertiary: #181921;
   --color-border: rgba(255, 255, 255, 0.07);
   --color-border-hover: rgba(168, 255, 120, 0.3);
+  --color-warning: #fac775;
+  --color-warning-dark: #ef9f27;
 
   --spacing-side: 22px;
   --spacing-header: 60px;
   --spacing-footer: 60px;
 
-  --font-syne: "Syne", sans-serif;
-  --font-syne-mono: "Syne Mono", monospace;
+  --font-syne: 'Syne', sans-serif;
+  --font-syne-mono: 'Syne Mono', monospace;
 
   --animate-fadeUp: fadeUp 0.5s ease both;
   --animate-fadeDown: fadeDown 0.5s ease both;
@@ -65,6 +67,8 @@
     --color-background-tertiary: #f0efe9;
     --color-border: rgba(24, 24, 26, 0.15);
     --color-border-hover: rgba(26, 86, 219, 0.35);
+    --color-warning: #e67e22;
+    --color-warning-dark: #d35400;
   }
 
   @media (min-width: 768px) {
@@ -75,7 +79,7 @@
 }
 
 body {
-  font-family: "Syne", sans-serif;
+  font-family: 'Syne', sans-serif;
   color: var(--color-text);
   background-color: var(--color-background);
   min-height: 100%;

@@ -1,26 +1,18 @@
 <script setup lang="ts">
-export type Project = {
-  title: string;
-  description: string;
-  link?: string;
-  tech: string[];
-  icon?: string;
-  alive?: boolean;
-  construction?: boolean;
-};
+import type { Project } from '~/types/project'
 
-defineProps<{ project: Project }>();
+defineProps<{ project: Project }>()
 
-const card = useTemplateRef<HTMLElement>("card");
-const visible = ref(false);
+const card = useTemplateRef<HTMLElement>('card')
+const visible = ref(false)
 
 useIntersectionObserver(
   card,
   ([entry]) => {
-    if (entry && entry.isIntersecting) visible.value = true;
+    if (entry && entry.isIntersecting) visible.value = true
   },
   { threshold: 0.15 },
-);
+)
 </script>
 
 <template>
@@ -83,7 +75,7 @@ a::before {
 
 a::before {
   @apply text-text-muted;
-  content: "↗";
+  content: '↗';
   position: absolute;
   right: 24px;
   top: 24px;
@@ -94,13 +86,13 @@ a:not(.construction):hover {
     @apply text-primary scale-x-150;
   }
   &::after {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at 50% 0%, rgba(168, 255, 120, 0.05) 0%, transparent 60%);
+    background: radial-gradient(circle at 50% 0%, var(--color-primary-light) 0%, transparent 60%);
   }
 }
 
@@ -108,10 +100,10 @@ a:not(.construction):hover {
   @apply rounded-full border px-2 py-1 border-border bg-background-tertiary whitespace-nowrap;
 
   &.green {
-    @apply border-green-500 text-green-500;
+    @apply border-green-500/50 text-green-500;
   }
   &.red {
-    @apply border-red-500 text-red-500;
+    @apply border-red-500/50 text-red-500;
   }
 }
 
@@ -121,7 +113,7 @@ a:not(.construction):hover {
   border-radius: inherit;
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
-  background: rgba(7, 7, 12, 0.55);
+  background: color-mix(in srgb, var(--color-background) 55%, transparent);
   display: flex;
   align-items: center;
   justify-content: center;

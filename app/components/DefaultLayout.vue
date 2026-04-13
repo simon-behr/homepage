@@ -1,6 +1,6 @@
 <script setup lang="ts">
-defineProps<{ withConstellation?: boolean }>();
-const mobileNavOpen = ref(false);
+defineProps<{ withConstellation?: boolean }>()
+const mobileNavOpen = ref(false)
 </script>
 <template>
   <div id="layout">

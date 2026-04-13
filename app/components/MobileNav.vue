@@ -1,15 +1,15 @@
 <script setup lang="ts">
-import { useSmoothScroll } from "~/composable/useSmoothScroll";
+import { useSmoothScroll } from '~/composable/useSmoothScroll'
 
-defineProps<{ visible: boolean }>();
-const emit = defineEmits(["close"]);
+defineProps<{ visible: boolean }>()
+const emit = defineEmits(['close'])
 
-const { scrollTo } = useSmoothScroll();
+const { scrollTo } = useSmoothScroll()
 
 const handleClick = (sectionId: string) => {
-  emit("close");
-  scrollTo(sectionId);
-};
+  emit('close')
+  scrollTo(sectionId)
+}
 </script>
 
 <template>
@@ -34,28 +34,20 @@ const handleClick = (sectionId: string) => {
 </template>
 
 <style scoped>
+@reference '~/assets/css/main.css';
+
 .mobile-nav {
-  background: rgba(7, 7, 12, 0.75);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  @apply bg-background/75 backdrop-blur-md;
 }
 
 button,
 a {
-  font-family: "Syne", sans-serif;
-  font-size: 32px;
-  font-weight: 700;
-  color: rgba(255, 255, 255, 0.2);
-  background: none;
-  border: none;
-  cursor: pointer;
-  text-decoration: none;
-  transition: color 0.2s;
+  @apply font-syne text-3xl font-bold text-text-muted/60 bg-none border-none cursor-pointer no-underline transition-colors duration-200;
 }
 
 button:hover,
 a:hover {
-  color: var(--color-text);
+  @apply text-text;
 }
 
 .nav-enter-active,

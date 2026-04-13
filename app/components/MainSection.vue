@@ -1,5 +1,5 @@
 <script setup lang="ts">
-defineProps<{ title: string; subTitle?: string; construction?: boolean }>();
+defineProps<{ title: string; subTitle?: string; construction?: boolean }>()
 </script>
 
 <template>

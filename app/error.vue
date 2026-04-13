@@ -1,13 +1,13 @@
 <script setup lang="ts">
 defineProps<{
   error: {
-    statusCode: number;
-    statusMessage: string;
-    message: string;
-  };
-}>();
+    statusCode: number
+    statusMessage: string
+    message: string
+  }
+}>()
 
-const handleError = () => clearError({ redirect: "/" });
+const handleError = () => clearError({ redirect: '/' })
 </script>
 
 <template>
@@ -44,7 +44,7 @@ const handleError = () => clearError({ redirect: "/" });
 }
 
 .section-label {
-  font-family: "Syne Mono", monospace;
+  font-family: 'Syne Mono', monospace;
   font-size: 10px;
   color: var(--color-primary);
   letter-spacing: 0.14em;

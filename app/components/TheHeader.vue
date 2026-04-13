@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { useSmoothScroll } from "~/composable/useSmoothScroll";
-import ColorModeButton from "~/components/ColorModeButton.vue";
+import { useSmoothScroll } from '~/composable/useSmoothScroll'
+import ColorModeButton from '~/components/ColorModeButton.vue'
 
-const { scrollTo } = useSmoothScroll();
-const isDesktop = useMediaQuery("(min-width: 768px)");
+const { scrollTo } = useSmoothScroll()
+const isDesktop = useMediaQuery('(min-width: 768px)')
 
-const mobileNavOpen = defineModel<boolean>({ required: true });
+const mobileNavOpen = defineModel<boolean>({ required: true })
 </script>
 
 <template>
@@ -54,10 +54,6 @@ nav button {
 }
 
 .hamburger span {
-  display: block;
-  width: 20px;
-  height: 1px;
-  background: var(--color-text-muted);
-  border-radius: 99px;
+  @apply block w-5 h-px bg-text-muted rounded-full;
 }
 </style>

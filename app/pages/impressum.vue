@@ -1,5 +1,5 @@
 <script setup lang="ts">
-definePageMeta({ layout: "no-background" });
+definePageMeta({ layout: 'no-background' })
 </script>
 
 <template>
@@ -77,7 +77,7 @@ h2 {
   letter-spacing: 0.04em;
   margin-bottom: 12px;
   text-transform: uppercase;
-  font-family: "Syne Mono", monospace;
+  font-family: 'Syne Mono', monospace;
 }
 
 p {

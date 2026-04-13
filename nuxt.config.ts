@@ -1,8 +1,8 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-import tailwindcss from "@tailwindcss/vite";
+import tailwindcss from '@tailwindcss/vite'
 
 export default defineNuxtConfig({
-  compatibilityDate: "2025-07-15",
+  compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
 
   typescript: {
@@ -11,7 +11,7 @@ export default defineNuxtConfig({
 
   app: {
     head: {
-      title: "Homepage",
+      title: 'Homepage',
       script: [
         {
           innerHTML: `
@@ -21,12 +21,12 @@ export default defineNuxtConfig({
               document.documentElement.classList.add(mode === 'light' ? 'light' : 'dark');
             })();
           `,
-          type: "text/javascript",
+          type: 'text/javascript',
         },
       ],
       meta: [
-        { charset: "utf8" },
-        { name: "viewport", content: "width=device-width, initial-scale=1" },
+        { charset: 'utf8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       ],
     },
   },
@@ -35,11 +35,11 @@ export default defineNuxtConfig({
     port: 6767,
   },
 
-  css: ["./app/assets/css/main.css"],
+  css: ['./app/assets/css/main.css'],
 
   vite: {
     plugins: [tailwindcss()],
   },
 
-  modules: ["@vueuse/nuxt"],
-});
+  modules: ['@vueuse/nuxt'],
+})

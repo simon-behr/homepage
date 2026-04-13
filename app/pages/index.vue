@@ -1,35 +1,35 @@
 <script setup lang="ts">
-import type { Project } from "~/components/ProjectCard.vue";
-import { useSmoothScroll } from "~/composable/useSmoothScroll";
+import type { Project } from '~/types/project'
+import { useSmoothScroll } from '~/composable/useSmoothScroll'
 
 useSeoMeta({
-  title: "Simon B. — Frontend Developer & Student Pilot",
+  title: 'Simon B. — Frontend Developer & Student Pilot',
   description:
     "Vue 3, Nuxt 4, TypeScript — building clean interfaces with a pilot's eye for precision.",
-  ogTitle: "Simon B. — Frontend Developer & Student Pilot",
+  ogTitle: 'Simon B. — Frontend Developer & Student Pilot',
   ogDescription:
     "Vue 3, Nuxt 4, TypeScript — building clean interfaces with a pilot's eye for precision.",
-  ogImage: "/og-image.png",
-});
+  ogImage: '/og-image.png',
+})
 
-const upperWords = ["Building", "interfaces", "that"];
-const lowerWords = ["feel", "like", "flying."];
+const upperWords = ['Building', 'interfaces', 'that']
+const lowerWords = ['feel', 'like', 'flying.']
 
-const startDate = new Date("2024-01-15");
-const experience = new Date().getFullYear() - startDate.getFullYear();
+const startDate = new Date('2024-01-15')
+const experience = new Date().getFullYear() - startDate.getFullYear()
 
 const projects: Project[] = [
   {
-    title: "METAR Explorer",
+    title: 'METAR Explorer',
     description:
-      "Real-time aviation weather decoded. Search any ICAO station, visualize wind, clouds and flight categories - parsed form raw METAR strings.",
-    tech: ["Nuxt 4", "TypeScript", "Tailwind CSS"],
-    icon: "✈",
+      'Real-time aviation weather decoded. Search any ICAO station, visualize wind, clouds and flight categories - parsed form raw METAR strings.',
+    tech: ['Nuxt 4', 'TypeScript', 'Tailwind CSS'],
+    icon: '✈',
     construction: true,
   },
-];
+]
 
-const { scrollTo } = useSmoothScroll();
+const { scrollTo } = useSmoothScroll()
 </script>
 <template>
   <div class="md:pt-24 pt-8 pb-10 md:pb-20 flex flex-col gap-10 lg:gap-40 md:gap-20">
@@ -108,19 +108,12 @@ const { scrollTo } = useSmoothScroll();
 <style scoped>
 @reference '~/assets/css/main.css';
 .hero-tag {
-  @apply animate-fadeUp text-primary;
-  font-family: "Syne Mono", monospace;
-  font-size: 11px;
-  letter-spacing: 0.12em;
-  opacity: 0;
-  display: flex;
-  align-items: center;
-  gap: 10px;
+  @apply animate-fadeUp text-primary flex items-center gap-2.5 opacity-0 font-syne-mono text-[11px] tracking-[0.12em];
 }
 
 .hero-tag::before {
   @apply bg-primary;
-  content: "";
+  content: '';
   display: block;
   width: 24px;
   height: 1px;
@@ -158,7 +151,7 @@ const { scrollTo } = useSmoothScroll();
 
   &::before {
     @apply border-t border-b border-border bg-background -left-side -right-side;
-    content: "";
+    content: '';
     display: block;
     position: absolute;
     top: 0;

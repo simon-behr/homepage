@@ -25,7 +25,6 @@ Live at [simonbehr.dev](https://simonbehr.dev)
 - Dark / Light mode toggle
 - Scroll-triggered fade-in animations
 - Fully responsive
-- Glass-effect tech stack cards
 
 ---
 
