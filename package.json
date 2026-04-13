@@ -11,7 +11,7 @@
     "lint": "run-s --continue-on-error fmt oxlint",
     "lint:check": "run-s fmt:check oxlint:check",
     "oxlint": "oxlint --fix",
-    "oxlint:check": "oxlint --check",
+    "oxlint:check": "oxlint",
     "fmt": "oxfmt",
     "fmt:check": "oxfmt --check",
     "npm-check-updates": "npx taze major --maturity-period 2",
