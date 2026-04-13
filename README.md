@@ -1,75 +1,87 @@
-# Nuxt Minimal Starter
+# simonbehr.dev
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Personal portfolio site — built with Nuxt 4, Vue 3, TypeScript and Tailwind CSS.
 
-## Setup
+Live at [simonbehr.dev](https://simonbehr.dev)
 
-Make sure to install dependencies:
+---
+
+## Stack
+
+- **Framework** — Nuxt 4 / Vue 3 with Composition API
+- **Language** — TypeScript
+- **Styling** — Tailwind CSS v4
+- **Animations** — VueUse Motion, custom CSS keyframes
+- **Background** — Canvas-based constellation with mouse parallax
+- **Color Mode** — Dark / Light via `@nuxtjs/color-mode`
+- **Deployment** — Vercel with CI via GitHub Actions
+
+---
+
+## Features
+
+- Animated hero with staggered word reveal
+- Interactive constellation background that reacts to mouse movement
+- Dark / Light mode toggle
+- Scroll-triggered fade-in animations
+- Fully responsive
+- Glass-effect tech stack cards
+
+---
+
+## Running locally
 
 ```bash
-# npm
+# Install dependencies
 npm install
 
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
+# Start dev server
 npm run dev
 
-# pnpm
-pnpm dev
+# Type check
+npm run typecheck
 
-# yarn
-yarn dev
-
-# bun
-bun run dev
+# Lint
+npm run lint
 ```
 
-## Production
+---
 
-Build the application for production:
+## Project structure
 
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
+```
+app/
+├── assets/
+│   └── css/
+│       └── main.css
+├── components/
+│   ├── ColorModeButton.vue
+│   ├── ConstellationBackground.vue
+│   ├── ConstructionOverlay.vue
+│   ├── DefaultLayout.vue
+│   ├── MainSection.vue
+│   ├── MobileNav.vue
+│   ├── ProjectCard.vue
+│   ├── TechStack.vue
+│   ├── TheFooter.vue
+│   └── TheHeader.vue
+├── composable/
+│   ├── useConstellation.ts
+│   └── useSmoothScroll.ts
+├── layouts/
+│   ├── default.vue
+│   └── NoBackground.vue
+├── pages/
+│   ├── index.vue
+│   └── impressum.vue
+├── app.vue
+└── error.vue
 ```
 
-Locally preview production build:
+---
 
-```bash
-# npm
-npm run preview
+## About
 
-# pnpm
-pnpm preview
+I'm a German frontend developer. This site is where I collect my work and document what I build.
 
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+→ [simonbehr.dev](https://simonbehr.dev)
