@@ -1,6 +1,6 @@
 <script setup lang="ts">
-const isDark = useDark({ initialValue: "dark" });
-const toggleDark = useToggle(isDark);
+const isDark = useDark({ initialValue: 'dark' })
+const toggleDark = useToggle(isDark)
 </script>
 
 <template>

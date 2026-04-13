@@ -7,7 +7,7 @@ defineProps<{
   }
 }>()
 
-const handleError = () => clearError({redirect: '/'})
+const handleError = () => clearError({ redirect: '/' })
 </script>
 
 <template>
@@ -21,12 +21,8 @@ const handleError = () => clearError({redirect: '/'})
       <p class="sub" v-if="error.statusCode === 404">
         The page you're looking for doesn't exist or has been moved.
       </p>
-      <p class="sub" v-else>
-        An unexpected error occurred. Try refreshing the page.
-      </p>
-      <button class="button-primary filled" @click="handleError">
-        ← Back home
-      </button>
+      <p class="sub" v-else>An unexpected error occurred. Try refreshing the page.</p>
+      <button class="button-primary filled" @click="handleError">← Back home</button>
     </div>
   </div>
 </template>

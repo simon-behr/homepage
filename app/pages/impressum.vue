@@ -1,5 +1,5 @@
 <script setup lang="ts">
-definePageMeta({ layout: 'no-background' });
+definePageMeta({ layout: 'no-background' })
 </script>
 
 <template>
@@ -10,8 +10,8 @@ definePageMeta({ layout: 'no-background' });
       <section>
         <h2>Betreiber dieser Website und Verantwortlicher im Sinne des Telemediengesetzes:</h2>
         <p>
-          Simon Behr<br/>
-          85132 Schernfeld<br/>
+          Simon Behr<br />
+          85132 Schernfeld<br />
           Deutschland
         </p>
       </section>
@@ -24,20 +24,18 @@ definePageMeta({ layout: 'no-background' });
       <section>
         <h2>Haftungsausschluss</h2>
         <p>
-          Die Inhalte dieser Seite wurden mit größtmöglicher Sorgfalt erstellt.
-          Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte kann
-          jedoch keine Gewähr übernommen werden.
+          Die Inhalte dieser Seite wurden mit größtmöglicher Sorgfalt erstellt. Für die Richtigkeit,
+          Vollständigkeit und Aktualität der Inhalte kann jedoch keine Gewähr übernommen werden.
         </p>
       </section>
 
       <section>
         <h2>Urheberrecht</h2>
         <p>
-          Die durch den Seitenbetreiber erstellten Inhalte und Werke auf dieser
-          Website unterliegen dem deutschen Urheberrecht. Die Vervielfältigung,
-          Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der
-          Grenzen des Urheberrechts bedürfen der schriftlichen Zustimmung des
-          jeweiligen Autors bzw. Erstellers.
+          Die durch den Seitenbetreiber erstellten Inhalte und Werke auf dieser Website unterliegen
+          dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art
+          der Verwertung außerhalb der Grenzen des Urheberrechts bedürfen der schriftlichen
+          Zustimmung des jeweiligen Autors bzw. Erstellers.
         </p>
       </section>
     </div>

@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { useConstellation } from "~/composable/useConstellation";
+import { useConstellation } from '~/composable/useConstellation'
 
-const canvas = useTemplateRef<HTMLCanvasElement>("canvas");
-useConstellation(canvas);
+const canvas = useTemplateRef<HTMLCanvasElement>('canvas')
+useConstellation(canvas)
 </script>
 
 <template>

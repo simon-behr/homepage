@@ -1,5 +1,5 @@
 <template>
   <DefaultLayout :withConstellation="true">
-    <slot/>
+    <slot />
   </DefaultLayout>
 </template>
