@@ -1,18 +1,18 @@
 <script setup lang="ts">
 const data = [
   {
-    label: 'Frontend',
-    items: ['Vue 3', 'Nuxt 4', 'TypeScript', 'Tailwind CSS', 'Pinia', 'Svelte', 'Electron'],
+    label: "Frontend",
+    items: ["Vue 3", "Nuxt 4", "TypeScript", "Tailwind CSS", "Pinia", "Svelte", "Electron"],
   },
   {
-    label: 'Backend & APIs',
-    items: ['Node.js', 'Supabase', 'PostgreSQL', 'Auth.js', 'REST APIs'],
+    label: "Backend & APIs",
+    items: ["Node.js", "Supabase", "PostgreSQL", "Auth.js", "REST APIs"],
   },
   {
-    label: 'Tooling & DevOps',
-    items: ['Git', 'Docker', 'Vercel', 'Vitest', 'Playwright'],
+    label: "Tooling & DevOps",
+    items: ["Git", "Docker", "Vercel", "Vitest", "Playwright"],
   },
-]
+];
 
 const groups = useTemplateRef<HTMLElement>("groups");
 const visible = ref(false);

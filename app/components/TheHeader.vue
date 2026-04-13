@@ -31,11 +31,11 @@ const mobileNavOpen = defineModel<boolean>({ required: true });
       </button>
       <ColorModeButton />
       <button
-          v-if="!isDesktop"
-          @click="mobileNavOpen = true"
-          class="hamburger flex flex-col gap-1 p-1 pt-1.5"
+        v-if="!isDesktop"
+        @click="mobileNavOpen = true"
+        class="hamburger flex flex-col gap-1 p-1 pt-1.5"
       >
-        <span/><span/><span/>
+        <span /><span /><span />
       </button>
     </div>
   </header>
