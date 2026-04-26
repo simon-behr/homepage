@@ -25,7 +25,8 @@ const projects: Project[] = [
       'Real-time aviation weather decoded. Search any ICAO station, visualize wind, clouds and flight categories - parsed form raw METAR strings.',
     tech: ['Nuxt 4', 'TypeScript', 'Tailwind CSS'],
     icon: '✈',
-    construction: true,
+    link: 'https://metar.simonbehr.dev',
+    construction: false,
   },
 ]
 
